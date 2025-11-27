@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo Checkout</title>
+</head>
+<body>
+  <h1>Demo Product</h1>
+  <p>Price: $49</p>
+
+  <!-- Fake Buy Button -->
+  <button onclick="completePurchase()">Buy Now (Demo)</button>
+
+  <script>
+    function completePurchase() {
+      // simulate redirect to thank-you page
+      window.location.href = "thankyou.html?order_id=12345&amount=49";
+    }
+  </script>
+</body>
+</html>
