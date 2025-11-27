@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Thank You</title>
+  <!-- GOOGLE TAG MANAGER CODE SHOULD BE HERE -->
+</head>
+
+<body>
+  <h1>Thank you for your purchase!</h1>
+
+  <p>Your order was completed successfully.</p>
+
+  <script>
+    // Get URL parameters (order_id & amount)
+    const urlParams = new URLSearchParams(window.location.search);
+    const orderId = urlParams.get("order_id");
+    const amount = urlParams.get("amount");
+
+    // Push purchase event to GTM datalayer
+    dataLayer = window.dataLayer || [];
+    dataLayer.push({
+      event: "purchase",
+      transaction_id: orderId,
+      value: Number(amount),
+      currency: "USD",
+      items: [
+        {
+          item_id: "SKU_123",
+          item_name: "Demo Product",
+          price: Number(amount),
+          quantity: 1
+        }
+      ]
+    });
+  </script>
+</body>
+</html>
